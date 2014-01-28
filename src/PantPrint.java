@@ -1,20 +1,15 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/**
- *
- * @author becari
- */
 public class PantPrint extends javax.swing.JFrame {
-
+    //Declara una variable del tipus "Calculadora".
+    Calculadora calculadora = new Calculadora();
+    
+    
     /**
      * Creates new form PantPrint
      */
     public PantPrint() {
         initComponents();
+        //Crea un objecte de tipus calculadora i el guarda a la vriable "calculadora".
+        calculadora = new Calculadora();
     }
 
     /**
@@ -29,20 +24,20 @@ public class PantPrint extends javax.swing.JFrame {
         jButton16 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextPane1 = new javax.swing.JTextPane();
-        jButton1 = new javax.swing.JButton();
+        jButtonNum0 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
-        jButton7 = new javax.swing.JButton();
+        jButtonNum4 = new javax.swing.JButton();
+        jButtonNum3 = new javax.swing.JButton();
+        jButtonNum2 = new javax.swing.JButton();
         jButton8 = new javax.swing.JButton();
-        jButton9 = new javax.swing.JButton();
-        jButton10 = new javax.swing.JButton();
-        jButton11 = new javax.swing.JButton();
-        jButton12 = new javax.swing.JButton();
-        jButton13 = new javax.swing.JButton();
-        jButton14 = new javax.swing.JButton();
+        jButtonNum1 = new javax.swing.JButton();
+        jButtonNum6 = new javax.swing.JButton();
+        jButtonNum5 = new javax.swing.JButton();
+        jButtonNum8 = new javax.swing.JButton();
+        jButtonNum7 = new javax.swing.JButton();
+        jButtonNum9 = new javax.swing.JButton();
         jButton15 = new javax.swing.JButton();
         jButton17 = new javax.swing.JButton();
         jButton18 = new javax.swing.JButton();
@@ -58,7 +53,12 @@ public class PantPrint extends javax.swing.JFrame {
         jTextPane1.setEditable(false);
         jScrollPane1.setViewportView(jTextPane1);
 
-        jButton1.setText("0");
+        jButtonNum0.setText("0");
+        jButtonNum0.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButtonNum0MouseClicked(evt);
+            }
+        });
 
         jButton2.setText(",");
 
@@ -66,30 +66,85 @@ public class PantPrint extends javax.swing.JFrame {
 
         jButton4.setText("=");
 
-        jButton5.setText("4");
-
-        jButton6.setText("3");
-        jButton6.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton6ActionPerformed(evt);
+        jButtonNum4.setText("4");
+        jButtonNum4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButtonNum4MouseClicked(evt);
             }
         });
 
-        jButton7.setText("2");
+        jButtonNum3.setText("3");
+        jButtonNum3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButtonNum3MouseClicked(evt);
+            }
+        });
+        jButtonNum3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonNum3ActionPerformed(evt);
+            }
+        });
+
+        jButtonNum2.setText("2");
+        jButtonNum2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButtonNum2MouseClicked(evt);
+            }
+        });
+        jButtonNum2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonNum2ActionPerformed(evt);
+            }
+        });
 
         jButton8.setText("*");
 
-        jButton9.setText("1");
+        jButtonNum1.setText("1");
+        jButtonNum1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButtonNum1MouseClicked(evt);
+            }
+        });
+        jButtonNum1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonNum1ActionPerformed(evt);
+            }
+        });
 
-        jButton10.setText("6");
+        jButtonNum6.setText("6");
+        jButtonNum6.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButtonNum6MouseClicked(evt);
+            }
+        });
 
-        jButton11.setText("5");
+        jButtonNum5.setText("5");
+        jButtonNum5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButtonNum5MouseClicked(evt);
+            }
+        });
 
-        jButton12.setText("8");
+        jButtonNum8.setText("8");
+        jButtonNum8.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButtonNum8MouseClicked(evt);
+            }
+        });
 
-        jButton13.setText("7");
+        jButtonNum7.setText("7");
+        jButtonNum7.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButtonNum7MouseClicked(evt);
+            }
+        });
 
-        jButton14.setText("9");
+        jButtonNum9.setText("9");
+        jButtonNum9.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButtonNum9MouseClicked(evt);
+            }
+        });
 
         jButton15.setText("-");
 
@@ -107,11 +162,11 @@ public class PantPrint extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jButton13)
+                        .addComponent(jButtonNum7)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton12)
+                        .addComponent(jButtonNum8)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton14)
+                        .addComponent(jButtonNum9)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jButton17, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -123,25 +178,25 @@ public class PantPrint extends javax.swing.JFrame {
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jButton5)
+                                        .addComponent(jButtonNum4)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jButton11)
+                                        .addComponent(jButtonNum5)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jButton10, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(jButtonNum6, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(jButtonNum0, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(jButton3))
                                     .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jButton9)
+                                        .addComponent(jButtonNum1)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jButton7)
+                                        .addComponent(jButtonNum2)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jButton6)
+                                        .addComponent(jButtonNum3)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(jButton15, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -157,29 +212,29 @@ public class PantPrint extends javax.swing.JFrame {
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton12)
-                    .addComponent(jButton13)
-                    .addComponent(jButton14)
+                    .addComponent(jButtonNum8)
+                    .addComponent(jButtonNum7)
+                    .addComponent(jButtonNum9)
                     .addComponent(jButton17)
                     .addComponent(jButton18))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton5)
-                    .addComponent(jButton11)
-                    .addComponent(jButton10)
+                    .addComponent(jButtonNum4)
+                    .addComponent(jButtonNum5)
+                    .addComponent(jButtonNum6)
                     .addComponent(jButton8)
                     .addComponent(jButton19))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jButton7)
-                            .addComponent(jButton9)
-                            .addComponent(jButton6)
+                            .addComponent(jButtonNum2)
+                            .addComponent(jButtonNum1)
+                            .addComponent(jButtonNum3)
                             .addComponent(jButton15))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jButton1)
+                            .addComponent(jButtonNum0)
                             .addComponent(jButton2)
                             .addComponent(jButton3)))
                     .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -189,14 +244,74 @@ public class PantPrint extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+    private void jButtonNum3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonNum3ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton6ActionPerformed
+    }//GEN-LAST:event_jButtonNum3ActionPerformed
+
+    private void jButtonNum1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonNum1MouseClicked
+        this.calculadora.ponerNum("1");
+        //Poner que en la pantalla salga el número marcado.
+    }//GEN-LAST:event_jButtonNum1MouseClicked
+
+    private void jButtonNum2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonNum2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButtonNum2ActionPerformed
+
+    private void jButtonNum1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonNum1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButtonNum1ActionPerformed
+
+    private void jButtonNum2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonNum2MouseClicked
+        this.calculadora.ponerNum("2");
+        //Poner que en la pantalla salga el número marcado.
+    }//GEN-LAST:event_jButtonNum2MouseClicked
+
+    private void jButtonNum3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonNum3MouseClicked
+        this.calculadora.ponerNum("3");
+        //Poner que en la pantalla salga el número marcado.
+    }//GEN-LAST:event_jButtonNum3MouseClicked
+
+    private void jButtonNum4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonNum4MouseClicked
+        this.calculadora.ponerNum("4");
+        //Poner que en la pantalla salga el número marcado.
+    }//GEN-LAST:event_jButtonNum4MouseClicked
+
+    private void jButtonNum5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonNum5MouseClicked
+        this.calculadora.ponerNum("5");
+        //Poner que en la pantalla salga el número marcado.
+    }//GEN-LAST:event_jButtonNum5MouseClicked
+
+    private void jButtonNum6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonNum6MouseClicked
+        this.calculadora.ponerNum("6");
+        //Poner que en la pantalla salga el número marcado.
+    }//GEN-LAST:event_jButtonNum6MouseClicked
+
+    private void jButtonNum7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonNum7MouseClicked
+        this.calculadora.ponerNum("7");
+        //Poner que en la pantalla salga el número marcado.
+    }//GEN-LAST:event_jButtonNum7MouseClicked
+
+    private void jButtonNum8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonNum8MouseClicked
+        this.calculadora.ponerNum("8");
+        //Poner que en la pantalla salga el número marcado.
+    }//GEN-LAST:event_jButtonNum8MouseClicked
+
+    private void jButtonNum9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonNum9MouseClicked
+        this.calculadora.ponerNum("9");
+        //Poner que en la pantalla salga el número marcado.
+    }//GEN-LAST:event_jButtonNum9MouseClicked
+
+    private void jButtonNum0MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonNum0MouseClicked
+        this.calculadora.ponerNum("0");
+        //Poner que en la pantalla salga el número marcado.
+    }//GEN-LAST:event_jButtonNum0MouseClicked
 
     /**
      * @param args the command line arguments
      */
     public static void main(String args[]) {
+        
+        
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -229,12 +344,6 @@ public class PantPrint extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton10;
-    private javax.swing.JButton jButton11;
-    private javax.swing.JButton jButton12;
-    private javax.swing.JButton jButton13;
-    private javax.swing.JButton jButton14;
     private javax.swing.JButton jButton15;
     private javax.swing.JButton jButton16;
     private javax.swing.JButton jButton17;
@@ -243,11 +352,17 @@ public class PantPrint extends javax.swing.JFrame {
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
-    private javax.swing.JButton jButton9;
+    private javax.swing.JButton jButtonNum0;
+    private javax.swing.JButton jButtonNum1;
+    private javax.swing.JButton jButtonNum2;
+    private javax.swing.JButton jButtonNum3;
+    private javax.swing.JButton jButtonNum4;
+    private javax.swing.JButton jButtonNum5;
+    private javax.swing.JButton jButtonNum6;
+    private javax.swing.JButton jButtonNum7;
+    private javax.swing.JButton jButtonNum8;
+    private javax.swing.JButton jButtonNum9;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextPane jTextPane1;
     // End of variables declaration//GEN-END:variables
