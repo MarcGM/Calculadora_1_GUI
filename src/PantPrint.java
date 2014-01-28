@@ -26,20 +26,20 @@ public class PantPrint extends javax.swing.JFrame {
         jTextPane1 = new javax.swing.JTextPane();
         jButtonNum0 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
+        jButtonOpSum = new javax.swing.JButton();
+        jButtonOpIgual = new javax.swing.JButton();
         jButtonNum4 = new javax.swing.JButton();
         jButtonNum3 = new javax.swing.JButton();
         jButtonNum2 = new javax.swing.JButton();
-        jButton8 = new javax.swing.JButton();
+        jButtonOpMult = new javax.swing.JButton();
         jButtonNum1 = new javax.swing.JButton();
         jButtonNum6 = new javax.swing.JButton();
         jButtonNum5 = new javax.swing.JButton();
         jButtonNum8 = new javax.swing.JButton();
         jButtonNum7 = new javax.swing.JButton();
         jButtonNum9 = new javax.swing.JButton();
-        jButton15 = new javax.swing.JButton();
-        jButton17 = new javax.swing.JButton();
+        jButtonOpRest = new javax.swing.JButton();
+        jButtonOpDiv = new javax.swing.JButton();
         jButton18 = new javax.swing.JButton();
         jButton19 = new javax.swing.JButton();
 
@@ -61,10 +61,21 @@ public class PantPrint extends javax.swing.JFrame {
         });
 
         jButton2.setText(",");
+        jButton2.setEnabled(false);
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
-        jButton3.setText("+");
+        jButtonOpSum.setText("+");
+        jButtonOpSum.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButtonOpSumMouseClicked(evt);
+            }
+        });
 
-        jButton4.setText("=");
+        jButtonOpIgual.setText("=");
 
         jButtonNum4.setText("4");
         jButtonNum4.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -97,7 +108,7 @@ public class PantPrint extends javax.swing.JFrame {
             }
         });
 
-        jButton8.setText("*");
+        jButtonOpMult.setText("*");
 
         jButtonNum1.setText("1");
         jButtonNum1.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -146,13 +157,15 @@ public class PantPrint extends javax.swing.JFrame {
             }
         });
 
-        jButton15.setText("-");
+        jButtonOpRest.setText("-");
 
-        jButton17.setText("/");
+        jButtonOpDiv.setText("/");
 
         jButton18.setText("CE");
+        jButton18.setEnabled(false);
 
         jButton19.setText("C");
+        jButton19.setEnabled(false);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -168,7 +181,7 @@ public class PantPrint extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jButtonNum9)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton17, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jButtonOpDiv, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jButton18)
                         .addGap(0, 0, Short.MAX_VALUE))
@@ -184,13 +197,13 @@ public class PantPrint extends javax.swing.JFrame {
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(jButtonNum6, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(jButtonOpMult, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGroup(layout.createSequentialGroup()
                                         .addComponent(jButtonNum0, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jButton3))
+                                        .addComponent(jButtonOpSum))
                                     .addGroup(layout.createSequentialGroup()
                                         .addComponent(jButtonNum1)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -198,11 +211,11 @@ public class PantPrint extends javax.swing.JFrame {
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(jButtonNum3)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jButton15, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                                        .addComponent(jButtonOpRest, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(jButton19, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, 45, Short.MAX_VALUE))))
+                                    .addComponent(jButtonOpIgual, javax.swing.GroupLayout.DEFAULT_SIZE, 45, Short.MAX_VALUE))))
                         .addContainerGap())))
         );
         layout.setVerticalGroup(
@@ -215,14 +228,14 @@ public class PantPrint extends javax.swing.JFrame {
                     .addComponent(jButtonNum8)
                     .addComponent(jButtonNum7)
                     .addComponent(jButtonNum9)
-                    .addComponent(jButton17)
+                    .addComponent(jButtonOpDiv)
                     .addComponent(jButton18))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButtonNum4)
                     .addComponent(jButtonNum5)
                     .addComponent(jButtonNum6)
-                    .addComponent(jButton8)
+                    .addComponent(jButtonOpMult)
                     .addComponent(jButton19))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -231,13 +244,13 @@ public class PantPrint extends javax.swing.JFrame {
                             .addComponent(jButtonNum2)
                             .addComponent(jButtonNum1)
                             .addComponent(jButtonNum3)
-                            .addComponent(jButton15))
+                            .addComponent(jButtonOpRest))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jButtonNum0)
                             .addComponent(jButton2)
-                            .addComponent(jButton3)))
-                    .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(jButtonOpSum)))
+                    .addComponent(jButtonOpIgual, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
 
@@ -306,6 +319,14 @@ public class PantPrint extends javax.swing.JFrame {
         //Poner que en la pantalla salga el número marcado.
     }//GEN-LAST:event_jButtonNum0MouseClicked
 
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButtonOpSumMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonOpSumMouseClicked
+        
+    }//GEN-LAST:event_jButtonOpSumMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -344,15 +365,10 @@ public class PantPrint extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton15;
     private javax.swing.JButton jButton16;
-    private javax.swing.JButton jButton17;
     private javax.swing.JButton jButton18;
     private javax.swing.JButton jButton19;
     private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton8;
     private javax.swing.JButton jButtonNum0;
     private javax.swing.JButton jButtonNum1;
     private javax.swing.JButton jButtonNum2;
@@ -363,6 +379,11 @@ public class PantPrint extends javax.swing.JFrame {
     private javax.swing.JButton jButtonNum7;
     private javax.swing.JButton jButtonNum8;
     private javax.swing.JButton jButtonNum9;
+    private javax.swing.JButton jButtonOpDiv;
+    private javax.swing.JButton jButtonOpIgual;
+    private javax.swing.JButton jButtonOpMult;
+    private javax.swing.JButton jButtonOpRest;
+    private javax.swing.JButton jButtonOpSum;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextPane jTextPane1;
     // End of variables declaration//GEN-END:variables

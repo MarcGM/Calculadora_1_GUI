@@ -4,6 +4,7 @@ public class Calculadora {
     String num2;
     Double resultat;
     String operador;
+    String operadorViejo;
     
     
     public Calculadora(){
@@ -11,6 +12,7 @@ public class Calculadora {
         this.num2 = "";
         this.resultat = null;
         this.operador = "";
+        this.operadorViejo = "";
         this.num1H = false;
     }
     
@@ -19,6 +21,13 @@ public class Calculadora {
             this.num1 += num;
         }else{
             this.num2 += num;
+        }
+    }
+    public void ponerOperador(String op){
+        if(this.operador.equals("")){
+            this.operador = op;
+        }else{
+            //Acabar
         }
     }
 }
