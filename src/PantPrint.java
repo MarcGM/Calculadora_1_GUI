@@ -44,7 +44,7 @@ public class PantPrint extends javax.swing.JFrame {
     public void desbloquearTeclas(int opcion){
         switch(opcion){
             case 1:
-                //jButtonDecimal.setEnabled(true);
+                jButtonDecimal.setEnabled(true);
                 jButtonOpSum.setEnabled(true);
                 jButtonOpRest.setEnabled(true);
                 jButtonOpMult.setEnabled(true);
@@ -52,7 +52,7 @@ public class PantPrint extends javax.swing.JFrame {
                 //jButtonC.setEnabled(true);
                 break;
             case 2:
-                //jButtonDecimal.setEnabled(true);
+                jButtonDecimal.setEnabled(true);
                 jButtonOpSum.setEnabled(true);
                 jButtonOpRest.setEnabled(true);
                 jButtonOpMult.setEnabled(true);
@@ -62,7 +62,7 @@ public class PantPrint extends javax.swing.JFrame {
                 break;
             case 3:
                 jButtonNum0.setEnabled(false);
-                //jButtonDecimal.setEnabled(false);
+                jButtonDecimal.setEnabled(false);
                 jButtonNum1.setEnabled(false);
                 jButtonNum2.setEnabled(false);
                 jButtonNum3.setEnabled(false);
@@ -81,12 +81,40 @@ public class PantPrint extends javax.swing.JFrame {
                 //jButtonC.setEnabled(false);
                 break;
             case 4:
-                //jButtonDecimal.setEnabled(false);
+                jButtonDecimal.setEnabled(false);
                 jButtonOpSum.setEnabled(false);
                 jButtonOpRest.setEnabled(false);
                 jButtonOpMult.setEnabled(false);
                 jButtonOpDiv.setEnabled(false);
                 jButtonOpIgual.setEnabled(false);
+                jButtonNum0.setEnabled(true);
+                jButtonNum1.setEnabled(true);
+                jButtonNum2.setEnabled(true);
+                jButtonNum3.setEnabled(true);
+                jButtonNum4.setEnabled(true);
+                jButtonNum5.setEnabled(true);
+                jButtonNum6.setEnabled(true);
+                jButtonNum7.setEnabled(true);
+                jButtonNum8.setEnabled(true);
+                jButtonNum9.setEnabled(true);
+                break;
+            case 5:
+                jButtonNum0.setEnabled(false);
+                jButtonNum1.setEnabled(false);
+                jButtonNum2.setEnabled(false);
+                jButtonNum3.setEnabled(false);
+                jButtonNum4.setEnabled(false);
+                jButtonNum5.setEnabled(false);
+                jButtonNum6.setEnabled(false);
+                jButtonNum7.setEnabled(false);
+                jButtonNum8.setEnabled(false);
+                jButtonNum9.setEnabled(false);
+                jButtonDecimal.setEnabled(true);
+                jButtonOpSum.setEnabled(true);
+                jButtonOpRest.setEnabled(true);
+                jButtonOpMult.setEnabled(true);
+                jButtonOpDiv.setEnabled(true);
+                //jButtonC.setEnabled(true);
                 break;
         }
     }
@@ -178,11 +206,6 @@ public class PantPrint extends javax.swing.JFrame {
         jButtonNum3.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jButtonNum3MouseClicked(evt);
-            }
-        });
-        jButtonNum3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonNum3ActionPerformed(evt);
             }
         });
 
@@ -369,10 +392,6 @@ public class PantPrint extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButtonNum3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonNum3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButtonNum3ActionPerformed
-
     private void jButtonNum1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonNum1MouseClicked
         this.calculadora.ponerNum("1");
         //Poner que en la pantalla salga el número marcado.
@@ -432,7 +451,7 @@ public class PantPrint extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonNum0MouseClicked
 
     private void jButtonDecimalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonDecimalActionPerformed
-        // TODO add your handling code here:
+        this.calculadora.ponerNum(".");
     }//GEN-LAST:event_jButtonDecimalActionPerformed
 
     private void jButtonOpSumMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonOpSumMouseClicked

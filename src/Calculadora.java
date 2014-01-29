@@ -30,7 +30,11 @@ public class Calculadora {
             bufferPantallaCalc += num;
             pantallaPrincipal.escribirPantallaCalc(bufferPantallaCalc);
             this.num1 += num;
-            pantallaPrincipal.desbloquearTeclas(1);
+            if(this.num1.equals("0")){
+                pantallaPrincipal.desbloquearTeclas(5);
+            }else{
+                pantallaPrincipal.desbloquearTeclas(1);
+            }
             this.acabaDePonerOperador = false;
         }else{
             //Imprimir por el campo de texto (enganchado al texto anterior), la variable "num".
