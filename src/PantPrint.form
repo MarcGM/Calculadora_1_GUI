@@ -47,7 +47,7 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jButtonOpDiv" min="-2" pref="41" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jButton18" min="-2" max="-2" attributes="0"/>
+                      <Component id="jButtonCE" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                   </Group>
                   <Group type="102" attributes="0">
@@ -67,7 +67,7 @@
                                   <Group type="102" alignment="0" attributes="0">
                                       <Component id="jButtonNum0" min="-2" pref="84" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="jButton2" min="-2" pref="39" max="-2" attributes="0"/>
+                                      <Component id="jButtonDecimal" min="-2" pref="39" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Component id="jButtonOpSum" min="-2" max="-2" attributes="0"/>
                                   </Group>
@@ -83,7 +83,7 @@
                               </Group>
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="jButton19" max="32767" attributes="0"/>
+                                  <Component id="jButtonC" max="32767" attributes="0"/>
                                   <Component id="jButtonOpIgual" pref="45" max="32767" attributes="0"/>
                               </Group>
                           </Group>
@@ -105,7 +105,7 @@
                   <Component id="jButtonNum7" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jButtonNum9" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jButtonOpDiv" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jButton18" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jButtonCE" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
@@ -113,7 +113,7 @@
                   <Component id="jButtonNum5" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jButtonNum6" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jButtonOpMult" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jButton19" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jButtonC" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" max="-2" attributes="0">
@@ -127,7 +127,7 @@
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jButtonNum0" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jButton2" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jButtonDecimal" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jButtonOpSum" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
@@ -146,7 +146,7 @@
 
       <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
       <SubComponents>
-        <Component class="javax.swing.JTextPane" name="jTextPane1">
+        <Component class="javax.swing.JTextPane" name="pantallaCalc1">
           <Properties>
             <Property name="editable" type="boolean" value="false"/>
           </Properties>
@@ -161,13 +161,13 @@
         <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jButtonNum0MouseClicked"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="jButton2">
+    <Component class="javax.swing.JButton" name="jButtonDecimal">
       <Properties>
         <Property name="text" type="java.lang.String" value=","/>
         <Property name="enabled" type="boolean" value="false"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton2ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonDecimalActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JButton" name="jButtonOpSum">
@@ -286,13 +286,13 @@
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonOpDivActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="jButton18">
+    <Component class="javax.swing.JButton" name="jButtonCE">
       <Properties>
         <Property name="text" type="java.lang.String" value="CE"/>
         <Property name="enabled" type="boolean" value="false"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="jButton19">
+    <Component class="javax.swing.JButton" name="jButtonC">
       <Properties>
         <Property name="text" type="java.lang.String" value="C"/>
         <Property name="enabled" type="boolean" value="false"/>
