@@ -173,6 +173,7 @@
     <Component class="javax.swing.JButton" name="jButtonOpSum">
       <Properties>
         <Property name="text" type="java.lang.String" value="+"/>
+        <Property name="enabled" type="boolean" value="false"/>
       </Properties>
       <Events>
         <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jButtonOpSumMouseClicked"/>
@@ -182,6 +183,7 @@
     <Component class="javax.swing.JButton" name="jButtonOpIgual">
       <Properties>
         <Property name="text" type="java.lang.String" value="="/>
+        <Property name="enabled" type="boolean" value="false"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonOpIgualActionPerformed"/>
@@ -216,6 +218,7 @@
     <Component class="javax.swing.JButton" name="jButtonOpMult">
       <Properties>
         <Property name="text" type="java.lang.String" value="*"/>
+        <Property name="enabled" type="boolean" value="false"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonOpMultActionPerformed"/>
@@ -273,6 +276,7 @@
     <Component class="javax.swing.JButton" name="jButtonOpRest">
       <Properties>
         <Property name="text" type="java.lang.String" value="-"/>
+        <Property name="enabled" type="boolean" value="false"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonOpRestActionPerformed"/>
@@ -281,6 +285,7 @@
     <Component class="javax.swing.JButton" name="jButtonOpDiv">
       <Properties>
         <Property name="text" type="java.lang.String" value="/"/>
+        <Property name="enabled" type="boolean" value="false"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonOpDivActionPerformed"/>
@@ -289,8 +294,10 @@
     <Component class="javax.swing.JButton" name="jButtonCE">
       <Properties>
         <Property name="text" type="java.lang.String" value="CE"/>
-        <Property name="enabled" type="boolean" value="false"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonCEActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="jButtonC">
       <Properties>

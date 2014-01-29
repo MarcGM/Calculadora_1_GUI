@@ -16,26 +16,80 @@ public class PantPrint extends javax.swing.JFrame {
     public void escribirPantallaCalc(String textoAEscribir){
         pantallaCalc1.setText(textoAEscribir);
     }
-    public void bloquearTodasMenosCE(){
-        jButtonNum0.setEnabled(false);
-        jButtonNum1.setEnabled(false);
-        jButtonNum2.setEnabled(false);
-        jButtonNum3.setEnabled(false);
-        jButtonNum4.setEnabled(false);
-        jButtonNum5.setEnabled(false);
-        jButtonNum6.setEnabled(false);
-        jButtonNum7.setEnabled(false);
-        jButtonNum8.setEnabled(false);
-        jButtonNum9.setEnabled(false);
-        jButtonDecimal.setEnabled(false);
+    public void teclasPorDefecto(){
+        jButtonNum0.setEnabled(true);
+        jButtonNum1.setEnabled(true);
+        jButtonNum2.setEnabled(true);
+        jButtonNum3.setEnabled(true);
+        jButtonNum4.setEnabled(true);
+        jButtonNum5.setEnabled(true);
+        jButtonNum6.setEnabled(true);
+        jButtonNum7.setEnabled(true);
+        jButtonNum8.setEnabled(true);
+        jButtonNum9.setEnabled(true);
+        //jButtonDecimal.setEnabled(false);
         jButtonOpSum.setEnabled(false);
         jButtonOpRest.setEnabled(false);
         jButtonOpMult.setEnabled(false);
         jButtonOpDiv.setEnabled(false);
         jButtonOpIgual.setEnabled(false);
-        jButtonC.setEnabled(false);
+        //jButtonC.setEnabled(false);
     }
-
+    public void resetearConfIVariablesApp(){
+        //Resetea las variables de la aplicación (3 línias siguientes):
+        calculadora = new Calculadora(this);
+        teclasPorDefecto();
+        escribirPantallaCalc("");
+    }
+    public void desbloquearTeclas(int opcion){
+        switch(opcion){
+            case 1:
+                //jButtonDecimal.setEnabled(true);
+                jButtonOpSum.setEnabled(true);
+                jButtonOpRest.setEnabled(true);
+                jButtonOpMult.setEnabled(true);
+                jButtonOpDiv.setEnabled(true);
+                //jButtonC.setEnabled(true);
+                break;
+            case 2:
+                //jButtonDecimal.setEnabled(true);
+                jButtonOpSum.setEnabled(true);
+                jButtonOpRest.setEnabled(true);
+                jButtonOpMult.setEnabled(true);
+                jButtonOpDiv.setEnabled(true);
+                jButtonOpIgual.setEnabled(true);
+                //jButtonC.setEnabled(true);
+                break;
+            case 3:
+                jButtonNum0.setEnabled(false);
+                //jButtonDecimal.setEnabled(false);
+                jButtonNum1.setEnabled(false);
+                jButtonNum2.setEnabled(false);
+                jButtonNum3.setEnabled(false);
+                jButtonNum4.setEnabled(false);
+                jButtonNum5.setEnabled(false);
+                jButtonNum6.setEnabled(false);
+                jButtonNum7.setEnabled(false);
+                jButtonNum8.setEnabled(false);
+                jButtonNum9.setEnabled(false);
+                jButtonDecimal.setEnabled(false);
+                jButtonOpSum.setEnabled(false);
+                jButtonOpRest.setEnabled(false);
+                jButtonOpMult.setEnabled(false);
+                jButtonOpDiv.setEnabled(false);
+                jButtonOpIgual.setEnabled(false);
+                //jButtonC.setEnabled(false);
+                break;
+            case 4:
+                //jButtonDecimal.setEnabled(false);
+                jButtonOpSum.setEnabled(false);
+                jButtonOpRest.setEnabled(false);
+                jButtonOpMult.setEnabled(false);
+                jButtonOpDiv.setEnabled(false);
+                jButtonOpIgual.setEnabled(false);
+                break;
+        }
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -93,6 +147,7 @@ public class PantPrint extends javax.swing.JFrame {
         });
 
         jButtonOpSum.setText("+");
+        jButtonOpSum.setEnabled(false);
         jButtonOpSum.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jButtonOpSumMouseClicked(evt);
@@ -105,6 +160,7 @@ public class PantPrint extends javax.swing.JFrame {
         });
 
         jButtonOpIgual.setText("=");
+        jButtonOpIgual.setEnabled(false);
         jButtonOpIgual.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonOpIgualActionPerformed(evt);
@@ -143,6 +199,7 @@ public class PantPrint extends javax.swing.JFrame {
         });
 
         jButtonOpMult.setText("*");
+        jButtonOpMult.setEnabled(false);
         jButtonOpMult.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonOpMultActionPerformed(evt);
@@ -197,6 +254,7 @@ public class PantPrint extends javax.swing.JFrame {
         });
 
         jButtonOpRest.setText("-");
+        jButtonOpRest.setEnabled(false);
         jButtonOpRest.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonOpRestActionPerformed(evt);
@@ -204,6 +262,7 @@ public class PantPrint extends javax.swing.JFrame {
         });
 
         jButtonOpDiv.setText("/");
+        jButtonOpDiv.setEnabled(false);
         jButtonOpDiv.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonOpDivActionPerformed(evt);
@@ -211,7 +270,11 @@ public class PantPrint extends javax.swing.JFrame {
         });
 
         jButtonCE.setText("CE");
-        jButtonCE.setEnabled(false);
+        jButtonCE.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonCEActionPerformed(evt);
+            }
+        });
 
         jButtonC.setText("C");
         jButtonC.setEnabled(false);
@@ -395,6 +458,10 @@ public class PantPrint extends javax.swing.JFrame {
     private void jButtonOpIgualActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonOpIgualActionPerformed
         calculadora.ponerOperador("=");
     }//GEN-LAST:event_jButtonOpIgualActionPerformed
+
+    private void jButtonCEActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonCEActionPerformed
+        resetearConfIVariablesApp();
+    }//GEN-LAST:event_jButtonCEActionPerformed
 
     /**
      * @param args the command line arguments

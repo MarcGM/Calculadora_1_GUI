@@ -30,12 +30,14 @@ public class Calculadora {
             bufferPantallaCalc += num;
             pantallaPrincipal.escribirPantallaCalc(bufferPantallaCalc);
             this.num1 += num;
+            pantallaPrincipal.desbloquearTeclas(1);
             this.acabaDePonerOperador = false;
         }else{
             //Imprimir por el campo de texto (enganchado al texto anterior), la variable "num".
             bufferPantallaCalc += num;
             pantallaPrincipal.escribirPantallaCalc(bufferPantallaCalc);
             this.num2 += num;
+            pantallaPrincipal.desbloquearTeclas(2);
             this.acabaDePonerOperador = false;
         }
     }
@@ -57,6 +59,7 @@ public class Calculadora {
                     
                     //System.out.print(" "+op+" ");
                     this.operador = op;
+                    pantallaPrincipal.desbloquearTeclas(4);
                     this.acabaDePonerOperador = true;
                     this.num1H = true;
                 }
@@ -69,6 +72,7 @@ public class Calculadora {
                 //System.out.println(" = "+String.valueOf(this.resultado));
                 //System.out.print(op+" ");
                 this.operador = op;
+                pantallaPrincipal.desbloquearTeclas(4);
                 /*
                  * La instrucción siguiente, comprueva si "this.operador" es un igual o no.
                  * En caso afirmativo, devuelve "true". sino, devuelve "false".
@@ -106,7 +110,10 @@ public class Calculadora {
             pantallaPrincipal.escribirPantallaCalc(bufferPantallaCalc);
             
             //Poner instrucciónes que bloquee todas las teclas:
-            pantallaPrincipal.bloquearTodasMenosCE();
+            pantallaPrincipal.desbloquearTeclas(3);
         }
+    }
+    public void resetearTodo(){
+        
     }
 }
