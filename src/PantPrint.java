@@ -74,8 +74,18 @@ public class PantPrint extends javax.swing.JFrame {
                 jButtonOpSumMouseClicked(evt);
             }
         });
+        jButtonOpSum.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonOpSumActionPerformed(evt);
+            }
+        });
 
         jButtonOpIgual.setText("=");
+        jButtonOpIgual.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonOpIgualActionPerformed(evt);
+            }
+        });
 
         jButtonNum4.setText("4");
         jButtonNum4.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -109,6 +119,11 @@ public class PantPrint extends javax.swing.JFrame {
         });
 
         jButtonOpMult.setText("*");
+        jButtonOpMult.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonOpMultActionPerformed(evt);
+            }
+        });
 
         jButtonNum1.setText("1");
         jButtonNum1.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -158,8 +173,18 @@ public class PantPrint extends javax.swing.JFrame {
         });
 
         jButtonOpRest.setText("-");
+        jButtonOpRest.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonOpRestActionPerformed(evt);
+            }
+        });
 
         jButtonOpDiv.setText("/");
+        jButtonOpDiv.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonOpDivActionPerformed(evt);
+            }
+        });
 
         jButton18.setText("CE");
         jButton18.setEnabled(false);
@@ -326,6 +351,26 @@ public class PantPrint extends javax.swing.JFrame {
     private void jButtonOpSumMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonOpSumMouseClicked
         
     }//GEN-LAST:event_jButtonOpSumMouseClicked
+
+    private void jButtonOpSumActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonOpSumActionPerformed
+        calculadora.ponerOperador("+");
+    }//GEN-LAST:event_jButtonOpSumActionPerformed
+
+    private void jButtonOpRestActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonOpRestActionPerformed
+        calculadora.ponerOperador("-");
+    }//GEN-LAST:event_jButtonOpRestActionPerformed
+
+    private void jButtonOpMultActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonOpMultActionPerformed
+        calculadora.ponerOperador("*");
+    }//GEN-LAST:event_jButtonOpMultActionPerformed
+
+    private void jButtonOpDivActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonOpDivActionPerformed
+        calculadora.ponerOperador("/");
+    }//GEN-LAST:event_jButtonOpDivActionPerformed
+
+    private void jButtonOpIgualActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonOpIgualActionPerformed
+        calculadora.ponerOperador("=");
+    }//GEN-LAST:event_jButtonOpIgualActionPerformed
 
     /**
      * @param args the command line arguments

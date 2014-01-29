@@ -21,12 +21,12 @@ public class Calculadora {
     public void ponerNum(String num){
         if(num1H == false){
             //Imprimir por el campo de texto (enganchado al texto anterior), la variable "num".
-            
+            System.out.print(num);
             this.num1 += num;
             this.acabaDePonerOperador = false;
         }else{
             //Imprimir por el campo de texto (enganchado al texto anterior), la variable "num".
-            
+            System.out.print(num);
             this.num2 += num;
             this.acabaDePonerOperador = false;
         }
@@ -36,25 +36,32 @@ public class Calculadora {
         
         if(this.acabaDePonerOperador == true){
             //Enviar a método donde muestre mensaje donde diga que no se pueda poner un operador aquí.
+            System.out.println("¡¡¡ERROR!!!");
         }else{
             //Si entra en el "if" siguiente, significa que aún no se ha puesto el primer operador: por lo tanto, no hará ninguna operación.
             if(this.operador.equals("")){
-                //Imprimir por el campo de texto (con un espacio a la derecha y otro a la izquierda), la variable "op".
-
-                this.operador = op;
-                this.acabaDePonerOperador = true;
-                this.num1H = true;
+                if(op.equals("=")){
+                    System.out.println(" ¡¡¡NO SE PUEDE PONER UN IGUAL AQUÍ!!! ");
+                }else{
+                    //Imprimir por el campo de texto (con un espacio a la derecha y otro a la izquierda), la variable "op".
+                    System.out.print(" "+op+" ");
+                    this.operador = op;
+                    this.acabaDePonerOperador = true;
+                    this.num1H = true;
+                }
             }else{
                 this.operadorViejo = this.operador;
                 hacerOperacion();
                 // Imprimir por el campo de texto (con un espacio a la derecha y otro a la izquierda), un símbolo de igual, seguido de la variable "this.resultado", en String.
+                System.out.println(" = "+String.valueOf(this.resultado));
+                System.out.print(op+" ");
                 this.operador = op;
                 /*
                  * La instrucción siguiente, comprueva si "this.operador" es un igual o no.
                  * En caso afirmativo, devuelve "true". sino, devuelve "false".
                  */
                 llevaIgual = this.operador.equals("=");
-
+                accionesLlevaIgual(llevaIgual);
 
                 this.acabaDePonerOperador = true;
             }
@@ -74,6 +81,16 @@ public class Calculadora {
             case "/":
                 this.resultado = Double.parseDouble(num1) / Double.parseDouble(num2);
                 break;
+            default:
+                break;
+        }
+    }
+    public void accionesLlevaIgual(boolean llevaIgual){
+        this.num1 = String.valueOf(this.resultado);
+        this.num2 = "";
+        if(llevaIgual){
+            //Instrucción para parar la ejecución del programa.
+            System.out.println("PARO PROGRAMA");
         }
     }
 }
